@@ -20,6 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         let viewLayout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: HomeViewController(collectionViewLayout: viewLayout))
+        UINavigationBar.appearance().barTintColor = UIColor.rgb(251, green: 0, blue: 5)
+        application.statusBarStyle = .LightContent
+        let statusBarView = UIView()
+        statusBarView.backgroundColor = UIColor.rgb(235, green: 36, blue: 40)
+        window?.addSubview(statusBarView)
+        window?.addConstraintsWithFormat("H:|[v0]|", views: [statusBarView])
+        window?.addConstraintsWithFormat("V:|[v0(20)]", views: [statusBarView])
         return true
     }
 
